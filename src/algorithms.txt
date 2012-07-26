@@ -1,0 +1,41 @@
+Data Structure :Solution 1: Multivalue Linked Hash Map  Runtime: 0(n)
+Solution 2: B-tree/B+tree  Runtime: 0(n log n)
+Algorithm:
+command //input from stdin
+key=variable;
+v=value;
+BEGIN
+if command:set
+{
+map key and Value (k,v); 
+}
+
+if command:unset
+{
+if(key!=null)
+Remove the element that is associated with the key;
+make a copy of it and push into duplicate set//this case is used for rollback
+}
+if command:get
+{
+return associated value of the key 
+}
+
+f command:numequalto (variable find)
+{
+count=0;
+find each key and value ,if value==find  increase count;
+return count;
+}
+if command:rollback
+{
+if(key!=null)
+Remove the element that is associated with the key;
+push into original  set 
+else
+invalid rollback;
+}
+if command:commit
+{
+commit the value and key ,Remove all duplicate set associated with element/variable.
+}
